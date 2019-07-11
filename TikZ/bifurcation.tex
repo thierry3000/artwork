@@ -1,6 +1,11 @@
 \documentclass[a4paper,10pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{tikz}
+\usetikzlibrary{patterns}
+\usetikzlibrary{external}
+\tikzexternalize
+% to obtain pure image compile with
+% pdflatex -shell-escape bifurcation.tex
 
 %opening
 \title{}
@@ -11,24 +16,36 @@
 \maketitle
 
 \begin{abstract}
-
 \end{abstract}
 
 \section{}
-\begin{tikzpicture}[scale=0.4, transform shape]
+%\begin{tikzpicture}[scale=.5, transform shape]
+\begin{tikzpicture}[scale=.5,rotate=-45, transform shape]
+%inlet
 \draw circle (0.5cm and 2cm) (0,2) -- (6,2) (0,-2) -- (6,-2);
-\draw circle (0.4cm and 1.9cm);
-\draw (6,2) -- (12,5) (7,0) -- (12,3);
-\draw (12,4) circle (0.3 and 1);
-\draw (12,4) circle (0.2 and 0.9);
-\draw (6,-2) -- (12,-5) (7,0) -- (12,-3);
-\draw (12,-4) circle (0.3 and 1);
-\draw (12,-4) circle (0.2 and 0.9);
-\node (node_C) at (3,0) {\Huge{c} };
-\node (node_a) at (9,2.5) {\huge{a}};
-\node (node_b) at (9,-2.5) {\huge{b}};
-\path[very thick,->] (4,0.3) edge [bend right] (node_a);
-\path[very thick,->] (4,-0.3) edge [bend left] (node_b);
+\draw[pattern=horizontal lines,pattern color=black] circle (0.4cm and 1.9cm);
+%lines upper
+\draw (6,2) -- (20,8+1) (7,0) -- (20,8-1);
+%outlet up
+\draw (20,8) circle (0.3 and 1);
+\draw[pattern=horizontal lines,pattern color=black] (20,8) circle (0.2 and 0.9);
+%lines lower
+\draw (6,-2) -- (20,-8-1) (7,0) -- (20,-8+1);
+%lower circles
+\draw (20,-8) circle (0.3 and 1);
+\draw[pattern=horizontal lines,pattern color=black] (20,-8) circle (0.2 and 0.9);
+%letter B
+\node[scale=10,rotate=45] (node_a) at (17,4) {B};
+%bullet at A
+\draw[fill=black] (15,4) circle (0.5 and 0.5);
+%letter A
+\node[scale=10,rotate=45] (node_a) at (17,-4) {A};
+%bullet at B
+\draw[fill=black] (15,-4) circle (0.5 and 0.5);
+%A to B
+\draw [loosely dashed,line width=2.5mm] (15,-4) -- (15,4);
+%\path[very thick,->] (4,0.3) edge [bend right] (node_a);
+%\path[very thick,->] (4,-0.3) edge [bend left] (node_b);
 
 \end{tikzpicture}
 

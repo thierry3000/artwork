@@ -44,7 +44,7 @@ if False:
 
 #add vessels
 colorstring = 'b-'
-colorstringCap = 'r-'
+colorstringCap = 'coral'
 scaling = 5
 minLineWidth = 2.5 * scaling
 nextLineWidth = 3.15 *scaling
@@ -54,7 +54,7 @@ fontsize= 33
 offsetX = -0.0
 offsetY = 0.15
 #po - p1
-ax.plot([x[0],x[1]],[y[0],y[1]], colorstringCap, linewidth=minLineWidth )
+ax.plot([x[0],x[1]],[y[0],y[1]], color='coral', linewidth=minLineWidth )
 ax.text(x[0]+offsetX,y[0]+offsetY, r'$r_{cap}$=2.5$\mu$m', fontsize= fontsize)
 #p1 - p7
 ax.plot([x[1],x[7]],[y[1],y[7]], colorstring, linewidth=minLineWidth)
@@ -62,7 +62,7 @@ circle1 = plt.Circle((x[7],y[7]), 0.4, color='k',linestyle=':', fill=False, line
 ax.add_artist(circle1)
 ax.text(x[7]+0.35,y[7]+0.35, r'$b_{1}$', fontsize= fontsize)
 #p12 - p13
-ax.plot([x[12],x[13]],[y[12],y[13]], colorstringCap, linewidth=minLineWidth)
+ax.plot([x[12],x[13]],[y[12],y[13]], color=colorstringCap, linewidth=minLineWidth)
 ax.text(x[12]+offsetX,y[13]+offsetY, r'$r_{cap}$=2.5$\mu$m', fontsize= fontsize)
 #p13 -p7
 ax.plot([x[13],x[7]],[y[13],y[7]], colorstring, linewidth=minLineWidth)
@@ -73,7 +73,7 @@ ax.text(x[7]+0.5,y[7]-0.25, r'$r_1$=3.15 $\mu$m', fontsize=fontsize)
 #p8 - p15
 ax.plot([x[8],x[15]],[y[8],y[15]], colorstring, linewidth=nextLineWidth)
 #p18 - p19
-ax.plot([x[18],x[19]],[y[18],y[19]], colorstringCap, linewidth=minLineWidth)
+ax.plot([x[18],x[19]],[y[18],y[19]], color=colorstringCap, linewidth=minLineWidth)
 ax.text(x[18]+offsetX,y[18]+offsetY, r'$r_{cap}$=2.5$\mu$m', fontsize= fontsize)
 #p19 - p20
 ax.plot([x[19],x[20]],[y[19],y[20]], colorstring, linewidth=minLineWidth)
@@ -93,7 +93,7 @@ circle3 = plt.Circle((x[22],y[22]), 0.4, color='k',linestyle=':', fill=False, li
 ax.add_artist(circle3)
 ax.text(x[22]+0.35,y[22]+0.35, r'$b_{3}$', fontsize= fontsize)
 #p24 - p25
-ax.plot([x[24],x[25]],[y[24],y[25]], colorstringCap, linewidth=minLineWidth )
+ax.plot([x[24],x[25]],[y[24],y[25]], color=colorstringCap, linewidth=minLineWidth )
 ax.text(x[24]+offsetX,y[24]+offsetY, r'$r_{cap}$=2.5$\mu$m', fontsize= fontsize)
 #p25 - p26
 ax.plot([x[25],x[26]],[y[25],y[26]], colorstring, linewidth=minLineWidth )
